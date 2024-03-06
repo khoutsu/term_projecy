@@ -34,25 +34,23 @@ const User = ({ name, location, email, picture, login, dob, gender }) => {
         picture_medium: picture.medium,
         picture_thumbnail: picture.thumbnail,
       });
+      console.log(data);
       const response = await axios.post(
-        "http://api-user66026.se-rmutl.net/insertData",
+        "http://api-user66026.se-rmutl.net/api/adduser/add",
+        data,
         {
-          name_title: name.title,
-          name_first: name.first,
-          name_last: name.last,
-          country: location.country,
-          email: email,
-          gender: gender,
-          dob: dob.age,
-          username: login.username,
-          password: login.password,
-          picture_large: picture.large,
-          picture_medium: picture.medium,
-          picture_thumbnail: picture.thumbnail,
+          headers: {
+            // Overwrite Axios's automatically set Content-Type
+            "Content-Type": "application/json",
+          },
         }
       );
-
-      console.log(response.data);
+      if (response.status === 200) {
+        alert(
+          name.title + " " + name.first + " " + name.last + " " + response.data
+        );
+      }
+      console.log(response);
     } catch (error) {
       console.error("Error inserting data:", error);
     }
