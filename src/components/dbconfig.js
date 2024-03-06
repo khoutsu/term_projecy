@@ -3,17 +3,17 @@ var dbconfig = {
     //connectionLimit : 10,
     host: "localhost",
     port: "3306",
-    user: "root",
-    password: "",
-    database: "term_project",
+    user: "dbuser66",
+    password: "P@ssw0rd",
+    database: "user66026_db",
   },
   production: {
     //connectionLimit : 10,
     host: "localhost",
     port: "3306",
-    user: "root",
-    password: "",
-    database: "term_project",
+    user: "dbuser66026",
+    password: "P@ssw0rd",
+    database: "user66026_db",
   },
 };
 module.exports = dbconfig;
