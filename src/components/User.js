@@ -15,6 +15,7 @@ const User = ({ name, location, email, picture, login, dob, gender }) => {
       gender: gender,
       picture_large: picture.large,
       picture_medium: picture.medium,
+      picture_thumbnail: picture.thumbnail,
     });
   };
   const handleInsertData = async () => {
@@ -31,6 +32,7 @@ const User = ({ name, location, email, picture, login, dob, gender }) => {
         gender: gender,
         picture_large: picture.large,
         picture_medium: picture.medium,
+        picture_thumbnail: picture.thumbnail,
       });
       console.log(data);
       const response = await axios.post(
@@ -76,9 +78,6 @@ const User = ({ name, location, email, picture, login, dob, gender }) => {
       </div>
       <div>
         <button onClick={handleInsertData}>insert Data</button>
-      </div>
-      <div>
-        <button onClick={handleLogData}>Log Data</button>
       </div>
     </div>
   );
