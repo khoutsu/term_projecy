@@ -25,8 +25,8 @@ const User = ({ name, location, email, picture, login, dob, gender }) => {
         email: email,
         gender: gender,
         dob: dob.age,
-        login_username: login.username,
-        login_password: login.password,
+        username: login.username,
+        password: login.password,
         picture_thumbnail: picture.thumbnail,
       });
       console.log(data);
