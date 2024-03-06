@@ -34,7 +34,7 @@ const User = ({ name, location, email, picture, login, dob, gender }) => {
       });
       console.log(data);
       const response = await axios.post(
-        "http://api-user66005.se-rmutl.net/api/adduser/add",
+        "http://api-user66026.se-rmutl.net/api/adduser/add",
         data,
         {
           headers: {
@@ -53,6 +53,7 @@ const User = ({ name, location, email, picture, login, dob, gender }) => {
       console.error("Error inserting data:", error);
     }
   };
+
   return (
     <div className="random-user">
       <div className="user-image">
