@@ -19,24 +19,22 @@ const User = ({ name, location, email, picture, login, dob, gender }) => {
   };
   const handleInsertData = async () => {
     try {
-      // Send a request to your server endpoint
-      console.log({
-        name_title: name.title,
-        name_first: name.first,
-        name_last: name.last,
+      var data = JSON.stringify({
         country: location.country,
         email: email,
-        gender: gender,
-        dob: dob.age,
         username: login.username,
         password: login.password,
+        title: name.title,
+        dob: dob.age,
+        firstName: name.first,
+        lastName: name.last,
+        gender: gender,
         picture_large: picture.large,
         picture_medium: picture.medium,
-        picture_thumbnail: picture.thumbnail,
       });
       console.log(data);
       const response = await axios.post(
-        "http://api-user66026.se-rmutl.net/api/adduser/add",
+        "http://api-user66005.se-rmutl.net/api/adduser/add",
         data,
         {
           headers: {
@@ -55,7 +53,6 @@ const User = ({ name, location, email, picture, login, dob, gender }) => {
       console.error("Error inserting data:", error);
     }
   };
-
   return (
     <div className="random-user">
       <div className="user-image">
